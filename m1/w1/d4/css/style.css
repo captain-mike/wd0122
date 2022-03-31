@@ -1,0 +1,54 @@
+/*general styles*/
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+
+
+/*header*/
+header#header{
+    background-color: blue;
+    height: 100px;
+}
+
+#main-nav li{
+    display: inline-block;
+    background-color: #fff;
+    margin-left: -4px;
+    padding: 5px 0;
+    text-align: center;
+    width: calc(100% / 3);
+}
+
+#header li:hover{
+    background-color: #ccc;
+}
+#header li:hover a{
+    color: yellow;
+}
+
+/*
+https://picsum.photos/200/200
+prima section
+*/
+
+#prima-section{
+    padding: 50px 0;
+    background-image: url(../img/html5-web-applications.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+h1.site-title{
+    color: #fff;
+    font-size:2rem
+}

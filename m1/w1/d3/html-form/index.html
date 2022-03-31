@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ordina la tua pizza</h1>
+
+    <!--
+
+        Se inviamo in get, i dati vengono inseriti nell'url così:
+
+        index.html?gusto=diavola&tipo=napoletana&aggiunta-bufala=on
+
+    -->
+    <form method="GET" action="pagina-ricevente.html">
+
+        <h3>Scegli il gusto</h3>
+        <select name="gusto" required>
+            <option>--scegli pizza---</option>
+            <option value="margherita">Margherita</option><!-- gusto = margherita -->
+            <option value="diavola">Diavola</option><!-- gusto = diavola -->
+            <option value="capricciosa">Capricciosa</option><!-- gusto = capricciosa -->
+        </select>
+
+        <h3>Scegli il tipo</h3>
+        
+        <label for="tipo-sottile">Sottile: </label>  
+        <input id="tipo-sottile" value="sottile" type="radio" name="tipo" checked><!-- tipo = sottile -->
+        
+        <label for="tipo-napoletana">Napoletana:</label> 
+        <input id="tipo-napoletana" value="napoletana" type="radio" name="tipo"><!-- tipo = napoletana -->
+
+        <h3>Aggiunte</h3>
+
+        <label for="aggiunta-bufala">Bufala</label> 
+        <input type="checkbox" name="aggiunta-bufala" id="aggiunta-bufala">
+
+        <label for="aggiunta-prosciutto">Prosciutto</label> 
+        <input type="checkbox" name="aggiunta-prosciutto" id="aggiunta-prosciutto">
+
+
+        <hr>
+
+        <h3>Dati spedizione</h3>
+        <label for="nome">Nome: </label> 
+        <input id="nome" value="Mario" type="text" placeholder="scrivi il tuo nome" name="nome">
+
+        <hr>
+        <!--Qui sotto 2 modi alternativi tra loro per inviare il form-->
+        <button>Ordina button</button>
+        <input type="submit" value="Ordina input">
+
+    </form>
+
+    
+</body>
+</html>
