@@ -1,0 +1,43 @@
+
+@media (min-width: 481px) {
+
+    .blocco{
+        width: calc(100% / 2 - 2px);
+        display: inline-block;
+        margin-left:-4px;
+        margin-bottom: -3px;
+        background-color: yellow;
+    }
+    .blocco-desktop{
+        display: inline-block;
+        background-color:#000
+    }
+    
+}
+
+@media (min-width: 1201px) {
+    
+    .blog{
+        width: 1170px;
+        margin: 0 auto;
+    }
+    
+    .blocco{
+        width: calc(100% / 3 - 2px);
+        background-color: blue;
+    }
+    
+}
+@media (min-width: 1440px) {
+    
+    .blog{
+        width: 1300px;
+    }
+    
+    .blocco{
+        width: calc(100% / 4 - 2px);
+        background-color: green;
+    }
+
+}
+
