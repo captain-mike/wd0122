@@ -1,0 +1,41 @@
+section{
+    width: 300px;
+    margin: 50px auto;
+    position: relative;
+}
+.absolute-div{
+    background-color: red;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+#edit{
+    width: 50px;
+    height: 50px;
+    background-color:blue;
+    color: white;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 2px 2px 5px #000;
+}
+
+/*sticky*/
+
+
+.list{
+    height: 40px;
+    background-color:#ccc;
+    border: 1px solid #808080;
+}
+.list.sticky-list{
+    position:sticky;
+    top: 0;
+}
+.spazio{
+    height: 200vh;
+}
