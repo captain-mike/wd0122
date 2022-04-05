@@ -1,4 +1,4 @@
-section{
+#cont{
     width: 300px;
     margin: 50px auto;
     position: relative;
@@ -34,8 +34,70 @@ section{
 }
 .list.sticky-list{
     position:sticky;
-    top: 0;
+    top: 50px;
 }
 .spazio{
     height: 200vh;
+}
+
+/*z-index*/
+
+.blocco-colorato{
+    width: 200px;
+    height: 200px;
+    background-color:#ccc;
+    position: absolute;
+    z-index: 6;
+}
+
+.blocco-colorato:nth-of-type(2){
+    top: 50px;
+    left: 50px;
+    background-color: yellow;
+    z-index: 5;
+}
+.blocco-colorato:nth-of-type(3){
+    top: 100px;
+    left: 100px;
+    background-color: green;
+    z-index: 4;
+}
+.blocco-colorato:nth-of-type(4){
+    top: 150px;
+    left: 150px;
+    background-color: blue;
+    z-index: 3;
+}
+.blocco-colorato:nth-of-type(5){
+    top: 200px;
+    left: 200px;
+    background-color: orange;
+    z-index: 2;
+}
+.blocco-colorato:nth-of-type(6){
+    top: 250px;
+    left: 250px;
+    background-color: purple;
+    z-index: 1;
+}
+
+/*esempio absolute*/
+
+
+.contenitore{
+    width: 80vw;
+    background-color:aqua;
+    height: 50vh;
+    margin: 5vh auto;
+    padding: 15px;
+    position: relative;
+}
+
+.contenitore footer{
+    background-color: #ccc;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
