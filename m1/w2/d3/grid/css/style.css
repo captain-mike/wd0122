@@ -1,0 +1,62 @@
+.container{
+    display: grid;
+    background-color:aqua;
+    margin-bottom:20px
+}
+
+.blocco{
+    background-color: yellow;
+    border:1px solid brown;
+    font-size:4rem;
+}
+
+#n1{
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 300px 70px 100px;
+}
+
+#n2{
+    height: 500px;
+    grid-template-columns: repeat(4,70px);
+    row-gap:10px;
+    column-gap:5px;
+    justify-content: space-evenly;
+    align-content:start;
+}
+
+/*sito*/
+
+header{
+    grid-area: header;
+    background-color:blue;
+}
+main{
+    grid-area: main;
+    background-color: orange;
+}
+aside{
+    grid-area: aside;
+    background-color: green;
+}
+footer{
+    grid-area: footer;
+    background-color:yellow;
+}
+
+article{
+    height: 200px;
+    background-color:grey;
+    margin-bottom:10px
+}
+
+body{
+    display:grid;
+    grid-template-areas: 
+    'header header header'
+    'header header header'
+    'main main aside'
+    'footer footer footer';
+    min-height: 100vh;
+    grid-template-rows: 70px 70px auto 70px;
+
+}

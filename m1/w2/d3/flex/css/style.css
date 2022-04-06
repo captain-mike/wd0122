@@ -1,0 +1,86 @@
+
+h3{
+    background-color:green;
+    color:#fff;
+    font-size: 1.5rem;
+}
+
+.container{
+    display:flex;
+    background-color:aqua;
+}
+
+.blocco{
+    background-color: yellow;
+    border:1px solid brown;
+    font-size:4rem;
+    height: 200px;
+    width: 200px;
+}
+
+#n2{
+    flex-direction: row-reverse;
+}
+
+#n3{
+    flex-direction: column;
+    height: 500px;/*imposto un'altezza per vedere come gira*/
+}
+
+#n4{
+    flex-direction: column;
+    height: 500px;/*imposto un'altezza per vedere come gira*/
+    flex-wrap: wrap
+}
+#n5{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*
+justify: orizzontale
+align: verticale
+*/
+
+#n6{
+    justify-content: flex-end;
+}
+#n7{
+    justify-content: space-between;
+}
+#n8{
+    justify-content: space-evenly;
+}
+
+#n9{
+    align-items: flex-end;
+}
+#n9 .blocco:nth-of-type(1){
+    height: 100px;
+}
+
+#n10{
+    align-items: stretch;
+    height: 400px;
+    flex-direction: row-reverse;
+}
+#n10 .blocco{
+    height: auto;
+}
+#n10 .blocco:nth-of-type(3){
+    order: -1
+}
+
+#n11 .blocco{
+    flex-grow: 1;    
+}
+#n11 .blocco:nth-of-type(2){
+    flex-grow: 2;
+}
+#n11 .blocco:nth-of-type(3){
+    flex-shrink: 0.5;
+}
+
+#n12 .blocco{
+    flex-basis: 25%;
+}
