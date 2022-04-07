@@ -1,0 +1,31 @@
+@media screen and (min-width: 1024px) {
+
+    .container{
+        width:1200px;
+        margin: 0 auto;
+    }
+    .container-small{
+        width:800px;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 768px) {
+
+    .container{
+        width:900px;
+        margin: 0 auto;
+    }
+    .container-small{
+        width:700px;
+        margin: 0 auto;
+    }
+}
+
+.container{
+    width:100%;
+    margin: 0 auto;
+}
+.container-small{
+    width:100%;
+    margin: 0 auto;
+}
