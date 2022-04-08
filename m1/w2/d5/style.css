@@ -1,0 +1,12 @@
+#menu{
+    background-color: red;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+#apri-menu{
+    display: none;
+}
+input:checked + #menu{
+    height: 100px;
+}
