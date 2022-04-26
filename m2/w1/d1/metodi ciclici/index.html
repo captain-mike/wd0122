@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+/**
+ * foreach
+*/
+        let pizze = ['Margherita','Diavola','Marinara']
+
+        document.write(`<ul>`)
+
+        pizze.forEach(function(el,i){
+            //el è equivalente a pizze[i] del ciclo for
+            //document.write(`<li>${i+1} - ${el}</li>`)
+            document.write('<li>' + (i+1) + ' - ' +  el + '</li>')
+        })
+
+        document.write(`</ul>` )
+
+
+/**
+ * foreach vs map
+*/
+
+let num = [1,2,3,4,5,6,7,8,9]
+let num2 = []
+
+num.forEach(function(el){
+
+    //console.log(el * 2);
+
+    num2.push(el * 2)
+
+})
+
+console.log(num, num2);
+
+
+let numeriMoltiplicati = num.map(el => el * 2)
+
+console.log(numeriMoltiplicati);
+
+
+/**
+ * foreach vs filter
+*/
+
+num = [1,2,3,4,5,6,7,8,9]
+
+let f = []
+
+num.forEach(function(el){
+
+    if(el > 4){
+        f.push(el)
+    }
+
+})
+
+console.log(f);
+
+let filtro = num.filter(el => el > 4)
+console.log(filtro);
+
+
+/**
+ * reduce
+*/
+
+function somma(a,b,c){
+    return a+b+c;
+}
+
+console.log( somma(2,2,3) );//vecchio sistema poco funzionale
+
+num = [1,2,3,4,5,6,7,8,9]
+let sum = num.reduce((precedente,attuale) => {
+    console.log(precedente, attuale);
+    return precedente + attuale//return è obbligatorio per le funzioni freccia a più di una riga, diventano obbligatorie anche le parentesi graffe
+ } )
+
+//forma ristretta:
+//let sum = num.reduce((precedente,attuale) => precedente + attuale)
+
+console.log(sum);
+
+    </script>
+</body>
+</html>

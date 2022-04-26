@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        ATTENZIONE NON DECOMMENTARE
+        è UN LOOP INFINITO
+        
+        let condizione = true;
+        while(condizione){
+            console.log('test');
+        }*/
+
+        let x = 0;
+        while(x < 10){
+            console.log('test n°: ' + x);
+            x++
+        }
+
+
+        let frutta = ['Mele','Pere','Banane'];
+        let y = 0;
+
+        while(y <= frutta.length - 1){
+            console.log( frutta[y], y );
+            y++
+        }
+
+        /**
+         * ================================
+         * do / while
+        */
+
+        let h = 0;
+
+        do{
+            console.log('test n°: ' + h);
+            h++
+        }
+        while(h > 10)//condizione falsa
+        //se la condizione è falsa
+        //il codice verrà eseguito una sola volta
+        //in caso contrario funziona come il while
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="secondi"></div>
+    
+    <script>
+
+        let now = new Date();
+        console.log(now);//data attuale
+        console.log(now.getTime());//timestamp
+        console.log(now.getDay());//numero del giorno della settimana
+
+        let future = new Date()
+        console.log(future);
+
+        let futureMinutes = future.getMinutes();
+        future.setMinutes( futureMinutes + 15 )
+
+        console.log(future);
+
+        
+        
+        if(now.getTime() < future.getTime()){
+            //fai qualcosa
+        }
+        
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+        console.log(future.toLocaleDateString('it-IT', options));
+        /*
+        intervalli
+
+
+        setInterval(fn,milliseconds)
+        */
+
+
+        setInterval(function(){
+            let n = new Date();
+            document.querySelector('#secondi').innerHTML = n.getMinutes() + ' : ' + n.getSeconds()
+        },1000)
+
+        /*
+        function secondi(){
+            let n = new Date();
+            document.querySelector('#secondi').innerHTML = n.getSeconds()
+        }
+        setInterval(secondi,1000)
+        */
+
+
+    </script>
+</body>
+</html>

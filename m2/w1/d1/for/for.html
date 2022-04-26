@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        for(let i = 0; i < 10; i++){
+            console.log(i);
+        }
+
+        /*
+        posso sfruttare il ciclo per elaborare i dati di un array
+        */
+
+        let pizze = ['Margherita','Diavola','Marinara']
+
+        document.write(`<ul>`)
+
+        for(let i = 0; i <= pizze.length - 1; i++){
+            document.write(`<li>${pizze[i]}</li>` )
+            //document.write('<li>'+pizze[i]+'</li>' )
+        }
+
+        document.write(`</ul>` )
+
+
+        /**
+         * for of
+        */
+
+        let nome = 'giancarlo';
+
+        for(let l of nome){
+            document.write(`<div>${l}</div>` )
+        }
+        for(let p of pizze){
+            document.write(`<div>${p}</div>` )
+        }
+
+        /**
+         * for in
+        */
+
+        let user = {
+            nome : 'Mario',
+            cognome :  'rossi',
+            eta : 30
+        }
+
+
+        for(let prop in user ){
+                console.log(prop +': '+ user[prop]);
+        }
+
+        console.log('______________________');
+        console.log('VERSIONE FILTRATA SOTTO');
+        console.log('______________________');
+        
+        //filtrare in un for in
+        let campiDaVisualizzare = ['nome','cognome']
+
+        for(let prop in user ){
+            if(campiDaVisualizzare.includes(prop)){
+                console.log(prop +': '+ user[prop]);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
