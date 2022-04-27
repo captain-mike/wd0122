@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        let promise = new Promise(function(resolve, reject) {
+
+            let password = 'password'
+
+            if(password == 'pasword'){
+                resolve('accesso consentito')
+            }else{
+                reject('Accesso NON consentito')
+            }
+
+        })
+
+        promise
+        .then(function(s){
+            console.log(s);
+        },function(e){
+            console.log(e);
+        })
+
+
+        let timer = new Promise(function(resolve) {
+
+            setTimeout(function(){
+                resolve('ok');
+            }, 5000)
+
+        })
+
+        console.log(1);
+        timer.then(function(data){
+            console.log(data);
+        })
+        console.log(2);
+
+
+    </script>
+    
+</body>
+</html>
