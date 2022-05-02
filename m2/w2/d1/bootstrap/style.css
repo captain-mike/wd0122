@@ -1,0 +1,20 @@
+/*posso sovrascrivere classi di bootstrap se sono sicuro di volerle tutte con questo stile*/
+.btn-primary{
+    background-color: aqua;
+    border-color: black;
+    color: #000;
+}
+
+.bg-primary{
+    background-color: aqua;
+}
+
+/*posso attivare le modifiche su elementi che presentino una classe di bootstrap ed una definita da me(in pratica sugli elementi che le abbiano entrambe)*/
+
+.container.container-con-bordo{
+    border: 1px solid black;
+}
+
+.accordion-button.accordion-rosso:not(.collapsed){
+    background-color:red
+}
