@@ -1,0 +1,45 @@
+h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #808080;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #fff
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #808080;
+    padding: 15px;
+    font-weight: 400;
+    background-color: #0f0080
+}
+
+#p1 {
+    color: red;
+    height: calc(200px / 2)
+}
+
+#p2 {
+    background-color: red;
+    color: #fff;
+    width: 300px
+}
+
+#d1 {
+    background-color: #252500;
+    color: #f99
+}
+
+.main_div,
+.special_div {
+    margin: 5px;
+    border-top: 1px solid #ccc;
+    width: 250px
+}
+
+.special_div {
+    height: 250px;
+    margin-left: auto
+}

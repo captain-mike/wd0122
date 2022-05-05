@@ -1,0 +1,113 @@
+
+@import 'functions';
+
+@mixin testi($peso, $bg){
+    margin-top: 10px;
+    color: #808080;
+    padding: 15px;
+    font-weight: #{$peso};
+    background-color: #{$bg};
+}
+@mixin colore($modifica,$valore){
+    #{$modifica}color: $valore
+}
+
+@mixin  breakpoints($misura, $key, $value){
+    
+    @if $misura == desktop {
+        @media screen and (min-width: 1440px){
+            #{$key}:$value;
+        }
+    }
+    @else if $misura == tablet {
+        @media screen and (min-width: 768px){
+            #{$key}:$value;
+        }
+    }
+
+}
+
+h1{
+    font-size:1.5rem;
+    @include testi(bold,#fff);
+    /*@media screen and (min-width: 768px){
+            font-size:2rem;
+    }
+    @media screen and (min-width: 1440px){
+            font-size:4rem;
+    }*/
+    @include breakpoints(desktop, font-size, 4rem);
+    @include breakpoints(tablet, font-size, 2rem);
+    &:hover{
+        background-color: red;
+        color: set-color-pro(red,#808080);
+    }
+    &:after{
+        content: ">";
+    }
+}
+
+p{
+    font-size:1rem;
+    @include breakpoints(desktop, font-size, 1.5rem);
+    @include breakpoints(tablet, font-size, 1.3rem);
+    @include testi(400,rgb(15, 0, 128));
+}
+
+#p1{
+    @include colore('',red);
+    height: calc( 200px / 2 );
+}
+#p2{
+    @include colore('background-',red);
+    color: #fff;
+    width: miafunzione(3)
+}
+
+$sfondo : rgb(37, 37, 0);
+#d1{
+    background-color:$sfondo;
+    color: set-color-pro($sfondo, red);
+}
+
+.main_div{
+    margin: 5px;
+    border-top: 1px solid #ccc;
+    width: 200px;
+}
+.special_div{
+    @extend .main_div;
+    height: 250px;
+    margin-left: auto;
+}
+
+/*cicli*/
+
+@for $i from 0 to 6{
+
+    .bordo#{$i}{
+        border-top: 3px * $i solid #000
+    }
+    
+}
+
+$misure: 15px, 30px, 45px;
+
+@each $misura in $misure{
+    .ml-#{$misura}{
+        margin-left: $misura;
+    }
+    .mr-#{$misura}{
+        margin-right: $misura;
+    }
+    .mt-#{$misura}{
+        margin-top: $misura;
+    }
+    .mb-#{$misura}{
+        margin-bottom: $misura;
+    }
+}
+
+
+
+

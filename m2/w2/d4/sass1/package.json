@@ -1,0 +1,15 @@
+{
+  "name": "sass1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/style.scss css/style.css -w",
+    "compile:sass-compressed": "node-sass scss/style.scss css/style.min.css --output-style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
