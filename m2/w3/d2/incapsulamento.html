@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <input type="text" id="display" class="form-control">
+    <div class="row">
+        <button data-val="1" class="btnNumero col-4 p-3">1</button>
+        <button data-val="2" class="btnNumero col-4 p-3">2</button>
+        <button data-val="3" class="btnNumero col-4 p-3">3</button>
+        <button data-val="4" class="btnNumero col-4 p-3">4</button>
+        <button data-val="5" class="btnNumero col-4 p-3">5</button>
+        <button data-val="6" class="btnNumero col-4 p-3">6</button>
+        <button data-val="7" class="btnNumero col-4 p-3">7</button>
+        <button data-val="8" class="btnNumero col-4 p-3">8</button>
+        <button data-val="9" class="btnNumero col-4 p-3">9</button>
+        <button data-val="0" class="btnNumero col-4 p-3">0</button>
+        <button data-val="*" class="btnNumero col-4 p-3">x</button>
+        <button data-val="/" class="btnNumero col-4 p-3">/</button>
+        <button data-val="+" class="btnNumero col-4 p-3">+</button>
+        <button data-val="-" class="btnNumero col-4 p-3">-</button>
+        <button data-val="=" class="btnTotale col-4 p-3">=</button>
+    </div>
+
+
+    <script>
+
+        let app = {
+            display : document.querySelector('#display'),
+            bottoni : document.querySelectorAll('.btnNumero'),
+            bottoneTotale : document.querySelector('.btnTotale'),
+            totale : function(){
+                
+                console.log(this);
+                this.display.value = eval(this.display.value)
+
+            },
+            init : function() {
+
+                for(let bottone of this.bottoni){
+                    bottone.addEventListener('click',() => {
+                        let val = bottone.getAttribute('data-val')
+                        this.display.value += val
+                    })
+                }
+
+                this.bottoneTotale.addEventListener('click',() => this.totale())
+
+            }
+        }
+
+        app.init()
+
+
+    </script>
+</body>
+
+</html>

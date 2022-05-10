@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Pizza{
+            
+            tipo = 'Napoletana'
+            static farina = '00'
+
+            constructor(gusto, prezzo){
+                this.gusto = gusto;
+                this.prezzo = prezzo;
+            }
+
+            static mostraFarina(){
+                console.log(this.farina);//posso accedere alla proprietà statica da un metodo statico
+                console.log(this.prezzo);//posso accedere alla proprietà non statica da un metodo statico ma non essendo inizializzata ho undefined
+                console.log(this.tipo);//posso accedere alla proprietà non statica da un metodo statico ma non essendo inizializzata ho undefined
+            }
+        }
+
+        let margherita =  new Pizza('Margherita', 4)
+
+        console.log(margherita);
+        console.log(margherita.gusto);
+        console.log(margherita.farina);//farina è static, non posso accedervi da un'istanza della classe
+        console.log(Pizza.farina);
+        Pizza.mostraFarina()
+
+    </script>
+</body>
+</html>

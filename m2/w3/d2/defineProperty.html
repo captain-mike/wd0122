@@ -10,12 +10,12 @@
     
     <script>
 
-        //let r = new Rectangle()//non funzionerà poichè la classe Rectangle è definita in una riga successiva
-        class Rectangle{}
+        let oggetto = {}
+        Object.defineProperty(oggetto,'chiave',{value:'valore'})
+        Object.defineProperty(oggetto,'nome',{value:'mario'})
+        oggetto['cognome'] = 'Rossi'
 
-
-        
-
+        console.log(oggetto);
     </script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Rettangolo{
+            
+            constructor(h,w){
+                this.h = h
+                this.w = w
+                this.prova()//sarà il costruttore ad invocare il metodo
+            }
+            /* SBAGLIATO
+            non sono concessi più costruttori
+            constructor(a,b){
+                
+            }
+            */
+
+            prova(){
+                console.log(1)
+            }
+            prova(){
+                //se ho 2 metodi con lo stesso nome il secondo sovrascrive il primo
+                console.log(2)
+            }
+        }
+
+        let r = new Rettangolo(10,300)
+
+        r.prova()//posso lanciare il metodo ogni volta che voglio
+
+     
+
+    </script>
+</body>
+</html>

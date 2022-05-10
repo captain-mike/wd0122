@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //funzione autoinvocata
+        (function(){
+            console.log('autoeseguita')
+        })()
+        
+        
+        let singleton = (function(){
+            let i = 0;
+            console.log('autoeseguita')
+            return {
+                incrementa: () => i++,
+                decrementa: () => i--,
+                reset: () => i = 0,
+                log: () => console.log(i),
+            }
+        })()
+        
+
+        console.log(singleton.incrementa())
+        console.log(singleton.incrementa())
+        console.log(singleton.incrementa())
+        console.log(singleton.decrementa())
+        
+        singleton.log()
+        singleton.reset()
+        singleton.log()
+
+
+        let superForms = (function(){
+            return {
+                createHTMLInputElement : (oggetto, required = false) => {
+                    let input = document.createElement('input')
+                    
+                    //this.setIfAttributeExists(input, obj, 'type')
+
+                    if(oggetto.name != undefined){
+                        input.name = oggetto.name;
+                    }
+                    if(oggetto.placeholder != undefined){
+                        input.placeholder = oggetto.placeholder;
+                    }
+                    if(oggetto.id != undefined){
+                        input.id = oggetto.id;
+                    }
+
+                    if(oggetto.classes != undefined){
+                        input.classList.add(oggetto.classes)
+                    }
+
+                    if(required){
+                        input.required = true
+                    }
+
+                    return input
+                }
+            }
+        })()
+
+        let nameOptions = {
+            type: "text", name: 'nome', classes: 'form-control', id : 'nome'
+        }
+        let name = superForms.createHTMLInputElement(nameOptions)
+
+        document.querySelector('body').append(name);
+
+
+    </script>
+</body>
+</html>
