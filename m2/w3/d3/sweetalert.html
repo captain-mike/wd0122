@@ -8,13 +8,13 @@
 </head>
 <body>
     
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-
-        localStorage.setItem('nome','Mario')
-        let nome = localStorage.getItem('nome')
-
-        console.log(nome);
-
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+        })
     </script>
 </body>
 </html>
