@@ -9,9 +9,31 @@ fetch("json/menu.json")
     //per gli altri si usa text()
     //questo metodo restituisce una promise
 
-}).then(res => {
+}).then(pizze => {
 
-    console.log(res)//res è un array
-    console.log(res[0])//res[0] è un oggetto
+    console.log(pizze)//res è un array
+    console.log(pizze[0])//res[0] è un oggetto
+
+
+    pizze.forEach(pizza => {
+        document.write(pizza.gusto + '<br>')
+
+        pizza.dimensioni.forEach(d => {
+            document.write(d + ', ')
+        })
+        
+        document.write('<hr>')
+    })
 
 })
+
+/**
+ * 
+ * versione che di solito si usa
+fetch("json/menu.json")
+.then(res => res.json())
+.then(pizze => {
+    //fa qualcosa
+})
+ * 
+ */
