@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table id="utenti">
+
+    </table>
+
+    <script>
+
+        const APPURL = 'https://sofin.wp-admin.it/public/api/v1/user'
+
+        let tabella = document.querySelector('#utenti')
+
+        fetch(APPURL)
+        .then(res => res.json())
+        .then(res => {
+
+            console.log(res);
+
+            /* decommenta per la versione complessa
+            let campiVisualizzati = ['id','name','lastname','email','role_id']
+            
+            let trH = document.createElement('tr')
+            for(campo of campiVisualizzati){
+                let th = document.createElement('th')
+                th.innerHTML = campo
+                trH.append(th)
+            }
+            tabella.append(trH)
+            */
+
+            for(let utente of res){
+                
+                let tr = document.createElement('tr')
+
+                /*
+                vesione semplice
+                */
+                let tdNome = document.createElement('td')
+                tdNome.innerHTML = utente.name
+
+                let tdCognome = document.createElement('td')
+                tdCognome.innerHTML = utente.lastname
+                tr.append(tdNome,tdCognome)
+
+
+                //vanno aggiunti manualmente tutti i campi da visualizzare
+
+                
+                //versione complessa ed automatica
+                /*
+                for(let prop in utente){//per opgni proprietà
+                    
+                    if(campiVisualizzati.includes(prop)){
+                        
+                        let key = prop;
+                        let value = utente[prop];
+                        
+                        let td = document.createElement('td')
+                        td.innerHTML = value
+                        
+                        
+                        tr.append(td)
+                    }
+                }
+                
+                */
+               
+               tabella.append(tr)
+
+                
+            }
+
+        })
+
+    </script>
+</body>
+</html>
