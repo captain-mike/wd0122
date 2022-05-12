@@ -72,6 +72,25 @@
                 }
                 
                 */
+
+                let tdAzioni = document.createElement('td')
+
+                let btnElimina = document.createElement('button')
+                btnElimina.innerHTML = 'Elimina'
+
+                btnElimina.addEventListener('click',function(){
+
+                    fetch(APPURL+'/'+utente.id, {
+                        method: 'DELETE'
+                    })
+
+                })
+
+                tdAzioni.append(btnElimina)
+
+
+                tr.append(tdAzioni)
+                
                
                tabella.append(tr)
 
