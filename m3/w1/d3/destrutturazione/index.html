@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myform">
+
+        <input type="text" id="name">
+        <input type="text" id="lastname">
+        <input type="password" id="password">
+        <button>Invia</button>
+
+    </form>
+
+    <script>
+
+        let bottone = document.querySelector('#myform button')
+
+        bottone.addEventListener('click',function(e){
+            e.preventDefault();
+
+            let fields = document.querySelectorAll('#myform input')
+            let [name,lastname,password] = fields
+            let values = Array.from(fields).map((f) => f.value)
+
+            for(let f of fields){
+                if(f.value == ''){
+                    console.log('il campo '+ f.id + ' è vuoto')
+                }
+            }
+
+        })
+
+    </script>
+</body>
+</html>
