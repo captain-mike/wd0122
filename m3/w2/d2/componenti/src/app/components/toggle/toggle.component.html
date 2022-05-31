@@ -1,0 +1,17 @@
+<p *ngIf="a > 0" >Ciao</p>
+
+<hr>
+
+<b *ngIf="active; then activeText1 else activeText2">
+</b>
+<ng-template #activeText1>
+  <b>testo 1</b>
+</ng-template>
+<ng-template #activeText2>
+  <b>testo 2</b>
+</ng-template>
+
+
+<button (click)="active = !active">Mostra/nascondi</button>
+
+{{ active }}
