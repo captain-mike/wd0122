@@ -1,0 +1,32 @@
+<button
+(click)="visibile = !visibile"
+class="btn btn-primary">aggiungi utente</button>
+
+<app-new-user *ngIf="visibile"
+(onManCreated)="aggiungiUomo($event)"
+(onWomanCreated)="aggiungiDonna($event)"
+[newName]="name"
+[newLastname]="lastname"
+></app-new-user>
+
+<!--In questo caso $event non è più un oggetto contenente le informazioni
+sull'evento, ma è il dato inviato dal metodo emit() dell'EventEmitter
+che si trova nel componente app-ne-user
+-->
+
+{{name}}
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Lastname</th>
+    <th>gender</th>
+  </tr>
+  <tr class="app-user" [element]="user" *ngFor="let user of users">
+  </tr>
+</table>
+
+
+
+
+

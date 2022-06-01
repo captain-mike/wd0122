@@ -1,0 +1,9 @@
+<div class="container">
+  <form>
+    <input type="text" class="form-control" name="name" [(ngModel)]="newName" placeholder="nome">
+    <input type="text" class="form-control" name="lastname" [(ngModel)]="newLastname" placeholder="cognome">
+
+    <button (click)="onAddMan()" class="btn btn-primary">Inserisci Uomo</button>
+    <button (click)="onAddWoman()"  class="btn btn-primary">Inserisci Donna</button>
+  </form>
+</div>
