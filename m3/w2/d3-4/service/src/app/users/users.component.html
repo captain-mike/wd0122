@@ -1,0 +1,7 @@
+<div *ngFor="let user of users">
+  {{user.id}}
+  {{user.name}}
+  {{user.lastname}}
+  {{user.gender}}
+  <button routerLink="/edit-user/{{user.id}}" class="btn btn-warning">Modifica</button>
+</div>
