@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { User } from './user';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,17 @@ export class AppComponent {
 
   users:User[] = [];
 
-  constructor(private http:HttpClient){//http adesso contiene tutti i metodi per fare chiamate ajax
+  isLoading:boolean = false;
 
+  newUser:User = new User('','');
+
+  constructor(private userService: UserService){}
+
+  ngOnInit(){
+    this.fetchUsers();
   }
 
   fetchUsers(){
-
-
     /*
     fetch(https://reqres.in/api/users?page=2)
     .then(res =>{
@@ -28,16 +33,36 @@ export class AppComponent {
 
       })
     */
-      this.http.get<{data:User[]}>('https://reqres.in/api/users?page=2')
-      .pipe(
-        map(res => res.data)
-      )
-      .subscribe(res =>{
-          console.log(res);
-
-          this.users = res
-
+    this.isLoading = true;
+    this.userService.getUsers().subscribe((res:User[]) =>{
+        this.isLoading = false;
+        this.users = res
       })
   }
+
+  salvaUser(){
+    this.userService.createUser(this.newUser)
+    .subscribe((res:any) =>{
+
+        let utenteCreato = new User(res.first_name, res.last_name);
+        utenteCreato.id = res.id;
+
+        this.users.push(utenteCreato);
+
+    })
+  }
+
+  eliminaUser(id:number){
+
+    this.userService.deleteUser(id)
+    .subscribe((res:any) =>{
+        this.users = this.users.filter(u => u.id != id)
+    });
+  }
+
+  setUser(user:User){
+    this.newUser = user
+  }
+
 
 }

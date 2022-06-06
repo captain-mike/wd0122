@@ -1,8 +1,33 @@
-<button (click)="fetchUsers()">Recupera utenti</button>
-<div>
-  <h1>Utenti:</h1>
-  <div *ngFor="let user of users">
-    {{user.first_name}}
-    {{user.last_name}}
+<h1>Aggiungi utente</h1>
+<form>
+  <input type="text"
+    placeholder="nome"
+    name="first_name"
+    [(ngModel)]="newUser.first_name">
+
+  <input type="text"
+    placeholder="cognome"
+    name="last_name"
+    [(ngModel)]="newUser.last_name">
+  <button class="btn btn-primary" (click)="salvaUser()">Crea</button>
+</form>
+
+{{newUser | json}}
+<hr>
+<div class="container">
+
+  <button class="btn btn-primary" (click)="fetchUsers()">Recupera utenti</button>
+  <div *ngIf="!isLoading && users.length > 0">
+    <h1>Utenti:</h1>
+    <div *ngFor="let user of users">
+      {{user.id}} -
+      {{user.first_name}}
+      {{user.last_name}}
+      <button (click)="eliminaUser(user.id)" class="btn btn-danger">Elimina</button>
+      <button (click)="setUser(user)" class="btn btn-warning">Modifica</button>
+    </div>
   </div>
+  <div *ngIf="!isLoading && users.length == 0">Non ci sono utenti</div>
+  <div *ngIf="isLoading">Loading...</div>
+
 </div>
