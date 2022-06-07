@@ -1,0 +1,52 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()" #f>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+          formControlName="email"
+          id="email" type="email"
+          class="form-control" placeholder="email">
+          <p [style.color]="'red'"
+          *ngIf="
+          getFormC('email')?.invalid &&
+          getFormC('email')?.touched
+          "
+          >Devi inserire l'email</p>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+        <input
+        formControlName="password"
+        id="password" type="password"
+        class="form-control" placeholder="password">
+        <p
+        *ngIf="
+        getFormC('password')?.invalid &&
+        getFormC('password')?.touched
+        "
+        [style.color]="'red'">
+        Devi inserire la password</p>
+        </div>
+    <div class="form-group">
+      <label for="city">Città</label>
+      <select id="city" formControlName="city" class="form-control">
+        <option value="">Seleziona</option>
+        <option value="roma">Roma</option>
+        <option value="milano">Milano</option>
+        <option value="reggio-emilia">Reggio Emilia</option>
+      </select>
+    </div>
+    <h3 for="city">sports</h3>
+
+    <button class="btn btn-danger"(click)="addSport()">Aggiungi sport</button>
+
+    <div class="form-group" *ngFor="let sport of getSportFields(); let i = index">
+      <input type="text" class="form-control">
+    </div>
+
+
+
+    <button class="btn btn-primary">Invia</button>
+  </form>
+</div>
