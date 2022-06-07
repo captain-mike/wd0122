@@ -1,0 +1,41 @@
+<div class="container">
+  <form (ngSubmit)="submit()" #f="ngForm">
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+      #email="ngModel"
+      ngModel name="email"
+      id="email" type="email"
+      class="form-control" required placeholder="email">
+      <p
+      [style.color]="'red'"
+      *ngIf="email.invalid && email.touched">Devi inserire l'email</p>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+      #psw="ngModel" required
+      minlength="8"
+      ngModel name="password"
+      id="password" type="password"
+      class="form-control" placeholder="password">
+      <p
+      [style.color]="'red'"
+      *ngIf="psw.invalid && psw.touched">
+      Devi inserire la {{psw.name}}</p>
+      <p *ngIf="psw.value.length < 8">Password troppo corta</p>
+    </div>
+    <div class="form-group">
+      <label for="city">Città</label>
+      <select id="city" ngModel name="city" class="form-control">
+        <option value="">Seleziona</option>
+        <option value="roma">Roma</option>
+        <option value="milano">Milano</option>
+        <option value="reggio-emilia">Reggio Emilia</option>
+      </select>
+    </div>
+    <button [disabled]="f.invalid" class="btn btn-primary">Invia</button>
+    <p *ngIf="f.invalid">Compila tutti i campi per poter inviare il form</p>
+  </form>
+</div>
