@@ -1,0 +1,6 @@
+<a [routerLink]="['/sports/prova']">Prova</a>
+<app-list>
+  <li class="list-group-item app-item"
+  *ngFor="let sport of sports" [titolo]="sport.name"></li>
+</app-list>
+

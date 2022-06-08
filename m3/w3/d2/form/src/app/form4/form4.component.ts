@@ -18,7 +18,7 @@ export class Form4Component implements OnInit {
    ngOnInit(): void {
 
      this.form = this.fb.group({
-       email: this.fb.control(null, [Validators.required, Validators.email, this.emailProibite]),
+       email: this.fb.control(null, [Validators.required, Validators.email], this.emailProibiteAsync),
        password: this.fb.control(null, Validators.required),
        city: this.fb.control(null),
        sports: this.fb.array([])
@@ -45,6 +45,9 @@ export class Form4Component implements OnInit {
      return this.form.get(name)
    }
 
+   /*
+   *Validazione sincrona
+    */
    listaEmailProibite:string[] = ['test@test.it','prova@prova.it']
    emailProibite = (formControl:FormControl) => {
           if(this.listaEmailProibite.includes(formControl.value)){
@@ -57,8 +60,8 @@ export class Form4Component implements OnInit {
 
 
 /**
- * validazione asyncrone
- * DISATTIVATA
+ * validazione asincrona
+ *
  */
    emailProibiteAsync = (formControl:AbstractControl) => {
       return new Promise<ValidationErrors | null>((resolve, reject) => {
