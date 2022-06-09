@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+
+<h1>toggle</h1>
+<button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+aria-controls="collapseExample">
+Toggle
+</button>
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      1
+    </div>
+  </div>
+</div>
+<div #collapse="ngbCollapse" [(ngbCollapse)]="!isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      2
+    </div>
+  </div>
+</div>
+<hr>
+<h1>Modals</h1>
+
+<ngbd-modal-component></ngbd-modal-component>
+<br>
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Modal custom</button>
+
+
+
