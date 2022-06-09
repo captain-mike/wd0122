@@ -1,0 +1,16 @@
+<h1>CDK</h1>
+<div class="container">
+
+  <div class="row">
+      <div class="col-6">
+        <h3>infinite scroll</h3>
+
+        <cdk-virtual-scroll-viewport itemSize="50" class="list-group infinite-scroll">
+          <li *cdkVirtualFor="let item of items" class="list-group-item">
+            {{item}}
+          </li>
+        </cdk-virtual-scroll-viewport>
+
+      </div>
+  </div>
+</div>
