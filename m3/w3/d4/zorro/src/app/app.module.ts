@@ -8,10 +8,11 @@ import { it_IT } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import it from '@angular/common/locales/it';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { AuthInterceptor } from './auth.interceptor';
 
 registerLocaleData(it);
 
@@ -28,7 +29,14 @@ registerLocaleData(it);
     NzLayoutModule,
     NzMenuModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: it_IT }],
+  providers: [
+    { provide: NZ_I18N, useValue: it_IT },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
