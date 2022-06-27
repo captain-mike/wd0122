@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "email": "admin@admin.it",
+      "password": "$2a$10$7L9Bk6ClCzqMUPSjViqAGu1aS3n2wjgNXtFy7WiaAsMHO4ZHg4q.2",
+      "nome": "Admin",
+      "cognome": "Admin",
+      "indirizzo": {
+        "via": "Iste velit dolore as",
+        "citta": "Est iusto commodo qu",
+        "cap": 91,
+        "civico": "Voluptatem iusto vo"
+      },
+      "id": 1
+    },
+    {
+      "email": "dizo@mailinator.com",
+      "password": "$2a$10$RQa1g7P4z3tetQWl1/5BPOkudQi81vAYL.eDLZyLbW/abr4.b4Tkm",
+      "nome": "Voluptates quibusdam",
+      "cognome": "Consequatur Consequ",
+      "indirizzo": {
+        "via": "Adipisicing dolore a",
+        "citta": "Nulla accusamus occa",
+        "cap": 46,
+        "civico": "Ratione nulla illo r"
+      },
+      "id": 2
+    },
+    {
+      "email": "dagugujum@mailinator.com",
+      "password": "$2a$10$tjaxDpFaVB7IP1X2rUyDou7vptpkERU1/t51JCETp8y/y6DYxVVa.",
+      "id": 3
+    },
+    {
+      "email": "qezam@mailinator.com",
+      "password": "$2a$10$byqBVLHTw4DeWrJRL.SB.ettKE78WghvVTTRZpkbYP89zIIV9w/.q",
+      "id": 4
+    },
+    {
+      "email": "xokazagofi@mailinator.com",
+      "password": "$2a$10$7bvib9sMX5NC4SDyJbenduEPcIVrcPjt1qFJkbrbWnetTuPrPRCLO",
+      "id": 5
+    }
+  ],
+  "customers": [
+    {
+      "nome": "Marioo",
+      "cognome": "Rossi",
+      "email": "davojubama@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "indirizzo": {
+        "via": "Aut unde laborum Do",
+        "citta": "Consectetur cumque ",
+        "cap": 52,
+        "civico": "Exercitationem eveni"
+      },
+      "id": 1
+    },
+    {
+      "nome": "Giovanna",
+      "cognome": "Bianchi",
+      "email": "husena@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "indirizzo": {
+        "via": "roma",
+        "citta": "Milano",
+        "cap": 65421,
+        "civico": "52"
+      },
+      "id": 2
+    },
+    {
+      "nome": "Animi aperiam omnis",
+      "cognome": "Corporis ad ut accus",
+      "email": "xiwyzo@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "indirizzo": {
+        "via": "Laborum Rerum ad ac",
+        "citta": "Voluptatum est velit",
+        "cap": 29,
+        "civico": "Ea culpa veritatis "
+      },
+      "id": 3
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "customer": 1,
+      "prodotti": [
+        1,
+        2,
+        3
+      ],
+      "scadenza": 6843521321,
+      "data_emissione": 68763351351
+    }
+  ],
+  "prodotti": [
+    {
+      "id": 1,
+      "nome": "tv",
+      "prezzo": 350
+    }
+  ]
+}

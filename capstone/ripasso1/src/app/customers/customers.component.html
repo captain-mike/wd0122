@@ -1,0 +1,69 @@
+<form>
+  <p
+  [innerText]="isNew ? 'Inserisci nuovo utente' : 'Stai modificando l\'utente '+ customer.nome + ' ' + customer.cognome "
+  ></p>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="nome" [(ngModel)]="customer.nome"
+      class="form-control" type="text" name="nome">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="cognome" [(ngModel)]="customer.cognome"
+      class="form-control" type="text" name="cognome">
+    </div>
+    <div class="col-md-8">
+      <input
+      placeholder="via" [(ngModel)]="customer.indirizzo.via"
+      type="text" class="form-control" name="via">
+    </div>
+    <div class="col-md-4">
+      <input
+      placeholder="civico" [(ngModel)]="customer.indirizzo.civico"
+      type="text" class="form-control" name="civico">
+    </div>
+    <div class="col-md-8">
+      <input
+      placeholder="città" [(ngModel)]="customer.indirizzo.citta"
+      type="text" class="form-control" name="citta">
+    </div>
+    <div class="col-md-4">
+      <input
+      placeholder="cap" [(ngModel)]="customer.indirizzo.cap"
+      type="number" class="form-control" name="cap">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="email" [(ngModel)]="customer.email"
+      class="form-control" type="email" name="email">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="password" [(ngModel)]="customer.password"
+      class="form-control" type="password" name="password">
+    </div>
+    <div class="col-12 col-md-6">
+      <button *ngIf="isNew" class="btn btn-primary" (click)="saveNewUser()">Aggiungi utente</button>
+      <button *ngIf="!isNew" class="btn btn-primary" (click)="editUser()">Salva modifiche</button>
+      <button class="btn btn-primary" (click)="resetform()">Svuota form</button>
+    </div>
+  </div>
+</form>
+
+<table class="table">
+  <tr>
+    <th *ngFor="let col of getColumns()">{{col}}</th>
+  </tr>
+  <tr *ngFor="let customer of customers; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{customer.nome}}</td>
+    <td>{{customer.cognome}}</td>
+    <td>{{customer.email}}</td>
+    <td><button class="btn btn-primary">Mostra indirizzo</button></td>
+    <td>
+      <button class="btn btn-warning" (click)="selectCustomer(customer)">Modifica</button>
+      <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Elimina</button>
+    </td>
+  </tr>
+</table>

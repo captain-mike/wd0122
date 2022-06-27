@@ -1,0 +1,47 @@
+<form>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="nome" [(ngModel)]="signUpData.nome"
+      class="form-control" type="text" name="nome">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="cognome" [(ngModel)]="signUpData.cognome"
+      class="form-control" type="text" name="cognome">
+    </div>
+    <div class="col-md-8">
+      <input
+      placeholder="via" [(ngModel)]="signUpData.indirizzo.via"
+      type="text" class="form-control" name="via">
+    </div>
+    <div class="col-md-4">
+      <input
+      placeholder="civico" [(ngModel)]="signUpData.indirizzo.civico"
+      type="text" class="form-control" name="civico">
+    </div>
+    <div class="col-md-8">
+      <input
+      placeholder="città" [(ngModel)]="signUpData.indirizzo.citta"
+      type="text" class="form-control" name="citta">
+    </div>
+    <div class="col-md-4">
+      <input
+      placeholder="cap" [(ngModel)]="signUpData.indirizzo.cap"
+      type="number" class="form-control" name="cap">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="email" [(ngModel)]="signUpData.email"
+      class="form-control" type="email" name="email">
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+      placeholder="password" [(ngModel)]="signUpData.password"
+      class="form-control" type="password" name="password">
+    </div>
+    <div class="col-12 col-md-6">
+      <button class="btn btn-primary" (click)="saveNewUser()">Registrati</button>
+    </div>
+  </div>
+</form>
