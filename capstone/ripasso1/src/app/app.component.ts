@@ -14,4 +14,5 @@ export class AppComponent {
 
   user:User = this.auth.getLoggedUser();
 
+
 }
