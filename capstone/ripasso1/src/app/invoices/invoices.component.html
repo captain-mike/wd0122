@@ -1,0 +1,45 @@
+<form>
+
+  <select
+  class="form-control"
+  name="customer" [(ngModel)]="customerSelezionato">
+    <option value="0">--Seleziona--</option>
+    <option *ngFor="let customer of customers"
+    [value]="customer.id">{{customer.nome}}</option>
+  </select>
+
+  <select
+  class="form-control" multiple
+  name="prodotti" [(ngModel)]="prodSelezionati"
+  (change)="log($event)"
+  >
+    <option *ngFor="let prod of prodotti"
+    [value]="prod.id">{{prod.nome}} {{prod.prezzo | currency: "EUR" : "symbol"}}</option>
+  </select>
+
+  <label for="data_emissione">Data emissione</label>
+  <input
+  id="data_emissione"
+  type="date" name="data_emissione"
+  placeholder="data_emissione"
+  class="form-control"
+  (change)="setDateObject($event)"
+  >
+
+  <label for="scadenza">Data scadenza</label>
+  <input
+  id="scadenza"
+  type="date" name="scadenza"
+  placeholder="scadenza"
+  class="form-control"
+  (change)="setDateObject($event)">
+
+  <button
+  (click)="addInvoice()"
+  class="btn btn-primary">Inserisci fattura</button>
+
+</form>
+
+{{scadenza}}
+
+

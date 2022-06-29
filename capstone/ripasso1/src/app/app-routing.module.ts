@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'users',
     canActivate: [AuthGuard],
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'invoices',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./invoices/invoices.module').then(m => m.InvoicesModule)
   }
 ];
 

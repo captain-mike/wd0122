@@ -79,6 +79,31 @@
       ],
       "scadenza": 6843521321,
       "data_emissione": 68763351351
+    },
+    {
+      "customer": 1,
+      "prodotti": [
+        1
+      ],
+      "scadenza": 6843521321,
+      "data_emissione": 68763351351,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "customer": "1",
+      "prodotti": [],
+      "scadenza": 1019347200000,
+      "data_emissione": 1505433600000
+    },
+    {
+      "id": 4,
+      "customer": "2",
+      "prodotti": [
+        4
+      ],
+      "scadenza": 1656460800000,
+      "data_emissione": 1656547200000
     }
   ],
   "prodotti": [
@@ -86,6 +111,21 @@
       "id": 1,
       "nome": "tv",
       "prezzo": 350
+    },
+    {
+      "id": 2,
+      "nome": "smartphone",
+      "prezzo": 700
+    },
+    {
+      "id": 3,
+      "nome": "pc portatile",
+      "prezzo": 1200
+    },
+    {
+      "nome": "microfono",
+      "prezzo": 59.9,
+      "id": 4
     }
   ]
 }

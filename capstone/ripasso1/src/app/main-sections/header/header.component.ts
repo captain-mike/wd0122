@@ -11,6 +11,33 @@ export class HeaderComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) { }
 
+  links:any[] = [
+    {
+      text: 'Home',
+      routerLink : ['/'],
+      forLoggedUsed : false,
+      classes: 'nav-link px-2 text-secondary'
+    },
+    {
+      text: 'Customers',
+      routerLink : ['/customers'],
+      forLoggedUsed : true,
+      classes: 'nav-link px-2 text-white'
+    },
+    {
+      text: 'Invoices',
+      routerLink : ['/invoices'],
+      forLoggedUsed : true,
+      classes: 'nav-link px-2 text-white'
+    },
+    {
+      text: 'Users',
+      routerLink : ['/users'],
+      forLoggedUsed : true,
+      classes: 'nav-link px-2 text-white'
+    }
+  ]
+
   userLogged!:boolean;
 
   ngOnInit(): void {
