@@ -41,6 +41,7 @@ export class InvoicesComponent implements OnInit {
     this.invoiceSvc.addInvoice({
       id:null,
       customer:this.customerSelezionato,
+      customerData:null,
       prodotti:this.prodSelezionati,
       scadenza:this.scadenza,
       data_emissione:this.data_emissione

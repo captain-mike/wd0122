@@ -13,12 +13,20 @@ export class InvoicesService {
   apiUrlCustomer:string = 'http://localhost:4201/invoices?customer=';
 
 
+  getAll(){
+    return this.http.get<Invoices[]>(this.apiUrl);
+  }
+
   addInvoice(invoice:Invoices){
     return this.http.post(this.apiUrl, invoice)
   }
 
   getInvoicesByCustomerID(id:number){
     return this.http.get<Invoices[]>(this.apiUrlCustomer+id)
+  }
+
+  getInvoiceByID(id:number){
+    return this.http.get<Invoices>(this.apiUrl+`/${id}`)
   }
 
 }

@@ -5,6 +5,7 @@
       "password": "$2a$10$7L9Bk6ClCzqMUPSjViqAGu1aS3n2wjgNXtFy7WiaAsMHO4ZHg4q.2",
       "nome": "Admin",
       "cognome": "Admin",
+      "role":"admin",
       "indirizzo": {
         "via": "Iste velit dolore as",
         "citta": "Est iusto commodo qu",
@@ -15,9 +16,10 @@
     },
     {
       "email": "dizo@mailinator.com",
-      "password": "$2a$10$RQa1g7P4z3tetQWl1/5BPOkudQi81vAYL.eDLZyLbW/abr4.b4Tkm",
+      "password": "$2a$10$7L9Bk6ClCzqMUPSjViqAGu1aS3n2wjgNXtFy7WiaAsMHO4ZHg4q.2",
       "nome": "Voluptates quibusdam",
       "cognome": "Consequatur Consequ",
+      "role":"user",
       "indirizzo": {
         "via": "Adipisicing dolore a",
         "citta": "Nulla accusamus occa",
@@ -72,6 +74,7 @@
     {
       "id": 1,
       "customer": 1,
+      "customerData": {},
       "prodotti": [
         1,
         2,
@@ -82,6 +85,7 @@
     },
     {
       "customer": 1,
+      "customerData": {},
       "prodotti": [
         1
       ],
@@ -91,18 +95,30 @@
     },
     {
       "id": 3,
-      "customer": "1",
+      "customer": 1,
+      "customerData": {},
       "prodotti": [],
       "scadenza": 1019347200000,
       "data_emissione": 1505433600000
     },
     {
       "id": 4,
-      "customer": "2",
+      "customer": 2,
+      "customerData": {},
       "prodotti": [
         4
       ],
       "scadenza": 1656460800000,
+      "data_emissione": 1656547200000
+    },
+    {
+      "id": 5,
+      "customer": 2,
+      "customerData": {},
+      "prodotti": [
+        4
+      ],
+      "scadenza": 1656547200000,
       "data_emissione": 1656547200000
     }
   ],

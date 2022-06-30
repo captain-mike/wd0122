@@ -1,0 +1,18 @@
+<a class="btn btn-success" [routerLink]="['/invoices','new-customer']"> Add customer </a>
+
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Customer</th>
+    <th>Products</th>
+    <th>Scadenza</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let inv of invoices; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{inv.customerData?.nome}}</td>
+    <td>{{inv.prodotti}}</td>
+    <td>{{inv.scadenza}}</td>
+    <td><a class="btn btn-info" [routerLink]="['/invoices',inv.id]">Dettaglio</a></td>
+  </tr>
+</table>
