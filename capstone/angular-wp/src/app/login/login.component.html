@@ -1,0 +1,9 @@
+<form>
+  <input type="text" name="username"
+  placeholder="username" [(ngModel)]="username">
+  <input type="password" name="password"
+  placeholder="password" [(ngModel)]="password">
+  <button (click)="login()">Accedi</button>
+</form>
+
+<a [routerLink]="['/posts']">Articoli</a>
